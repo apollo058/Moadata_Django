@@ -1,7 +1,7 @@
 {
-	"2": {
-		"job_id": 2,
-		"job_name": "test2222",
+	"1": {
+		"job_id": 1,
+		"job_name": "test_job",
 		"task_list": {
 			"read": [
 				"drop"
@@ -14,7 +14,7 @@
 		"property": {
 			"read": {
 				"task_name": "read",
-				"filename": "job_task/csv_data/b.csv",
+				"filename": "job_task/job_data/job.json",
 				"sep": ","
 			},
 			"drop": {
@@ -23,43 +23,14 @@
 			},
 			"write": {
 				"task_name": "write",
-				"filename": "job_task/csv_data/b.csv",
-				"sep": ","
-			}
-		}
-	},
-	"3": {
-		"job_id": 3,
-		"job_name": "Job3",
-		"task_list": {
-			"read": [
-				"drop"
-			],
-			"drop": [
-				"write"
-			],
-			"write": []
-		},
-		"property": {
-			"read": {
-				"task_name": "read",
-				"filename": "path/to/a.csv",
-				"sep": ","
-			},
-			"drop": {
-				"task_name": "drop",
-				"column_name": "date"
-			},
-			"write": {
-				"task_name": "write",
-				"filename": "path/to/b.csv",
+				"filename": "job_task/job_data/job.json",
 				"sep": ","
 			}
 		}
 	},
 	"4": {
 		"job_id": 4,
-		"job_name": "test",
+		"job_name": "test_job",
 		"task_list": {
 			"read": [
 				"drop"
@@ -88,7 +59,7 @@
 	},
 	"5": {
 		"job_id": 5,
-		"job_name": "test",
+		"job_name": "test_test",
 		"task_list": {
 			"read": [
 				"drop"
@@ -117,7 +88,36 @@
 	},
 	"6": {
 		"job_id": 6,
-		"job_name": "test_test",
+		"job_name": "test_job",
+		"task_list": {
+			"read": [
+				"drop"
+			],
+			"drop": [
+				"write"
+			],
+			"write": []
+		},
+		"property": {
+			"read": {
+				"task_name": "read",
+				"filename": "job_task/job_data/job.json",
+				"sep": ","
+			},
+			"drop": {
+				"task_name": "drop",
+				"column_name": "date"
+			},
+			"write": {
+				"task_name": "write",
+				"filename": "job_task/job_data/job.json",
+				"sep": ","
+			}
+		}
+	},
+	"7": {
+		"job_id": 7,
+		"job_name": "test_job",
 		"task_list": {
 			"read": [
 				"drop"
