@@ -34,7 +34,7 @@ class JobTaskSave(APIView):
             if list(data.keys()) != ['job_name', 'task_list', 'property']:
                 raise KeyError
 
-        except (FileNotFoundError, JSONDecodeError):
+        except (FileNotFoundError, JSONDecodeError, IndexError):
             # job.json 파일이 존재하지 않거나, job.json 파일이 비어있을 경우
             pk = "1"
             job = {}
@@ -66,13 +66,14 @@ class JobTaskEdit(APIView):
         result = JobController().set_job_data(job)
         return Response(result, status=status.HTTP_200_OK)
 
+class JobTaskRun(APIView):
     def get(self, request, pk):
         job = JobController().get_job_data()
-        job = job[pk]
 
         if pk not in list(job.keys()):
             return Response({"message" : "존재하지 않는 job_id입니다."}, status=status.HTTP_400_BAD_REQUEST)
 
+        job = job[pk]
         task_list = JobController().topology_sort(job['task_list'])
 
         for task in task_list:
